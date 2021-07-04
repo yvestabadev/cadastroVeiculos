@@ -1,6 +1,6 @@
 package br.com.akconsultor.veiculos.modelos;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "carros")
@@ -25,8 +27,10 @@ public class Carro {
 	private Integer ano;
 	private String descricao;
 	private Boolean vendido;
-	private Date created;
-	private Date updated;
+	@DateTimeFormat(pattern = "dd.MM.yyyy")
+	private LocalDateTime created;
+	@DateTimeFormat(pattern = "dd.MM.yyyy")
+	private LocalDateTime updated;
 
 	
 	
@@ -67,16 +71,16 @@ public class Carro {
 	public void setVendido(Boolean vendido) {
 		this.vendido = vendido;
 	}
-	public Date getCreated() {
+	public LocalDateTime getCreated() {
 		return created;
 	}
-	public void setCreated(Date created) {
+	public void setCreated(LocalDateTime created) {
 		this.created = created;
 	}
-	public Date getUpdated() {
+	public LocalDateTime getUpdated() {
 		return updated;
 	}
-	public void setUpdated(Date updated) {
+	public void setUpdated(LocalDateTime updated) {
 		this.updated = updated;
 	}
 	
