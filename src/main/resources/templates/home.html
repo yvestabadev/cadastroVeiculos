@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div>
+		Carros não vendidos: <span th:text="${numeroCarros}"></span>
+	</div>
+	<div>
+		Marcas disponíveis:
+		<ul>
+			<li>Volkswagen: <span th:text="${volkswagen}"></span></li>
+			<li>Honda: <span th:text="${honda}"></span></li>
+			<li>Peugeot: <span th:text="${peugeot}"></span></li>
+			<li>Fiat: <span th:text="${fiat}"></span></li>
+			<li>Chevrolet: <span th:text="${chevrolet}"></span></li>
+		</ul>
+	</div>
+
+	<div>
+		Quantidade de veículos por década:
+		<ul>
+			<li>1990: <span th:text="${anos90}"></span></li>
+			<li>2000: <span th:text="${anos2000}"></span></li>
+			<li>2010: <span th:text="${anos10}"></span></li>
+			<li>2020: <span th:text="${anos20}"></span></li>
+		</ul>
+	</div>
+	<div th:each="carro : ${carros}">
+		<span th:text="${carro.marca}">marcacarro </span> <span
+			th:text="${carro.veiculo}"> modelocarro </span> <span
+			th:text="${carro.ano}"> ano </span>
+	</div>
+
+</body>
+</html>
