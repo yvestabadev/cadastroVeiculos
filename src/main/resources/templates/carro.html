@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Detalhes do Veículo</title>
+</head>
+<body>
+<h1>Detalhes do veículo</h1>
+<h2><span th:text="${carro.marca}"></span> <span th:text="${carro.veiculo}"></span>
+ <span th:text="${carro.ano}"></span></h2>
+<h3 th:if="${carro.vendido}"> Veículo vendido! </h3>
+<h3 th:if="${!carro.vendido}">Disponível para compra</h3>
+<h3>Descrição: <span th:text="${carro.descricao}"></span></h3>
+<h4>Data da postagem: <span th:text="${#temporals.format(carro.created, 'dd/MM/yyyy')}"></span></h4>
+<h4>Última atualização: <span th:text="${#temporals.format(carro.updated, 'dd/MM/yyyy')}"></span></h4>
+
+
+</body>
+</html>
